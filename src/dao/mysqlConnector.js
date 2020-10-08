@@ -1,4 +1,4 @@
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 class MySQLConnector {
 
@@ -13,6 +13,7 @@ class MySQLConnector {
         this.internalPool = mysql.createPool({
             host: this.MYSQL_DB_ADDRESS,
             user: this.MYSQL_DB_USER,
+            port: 52000,
             database: this.MYSQL_DB_NAME,
             password: this.MYSQL_DB_PASSWORD,
             connectionLimit: this.MYSQL_DB_POOL_SIZE,
